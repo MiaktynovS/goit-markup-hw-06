@@ -744,6 +744,12 @@ line-height: 1.2;
     height: 30px;
     border-radius: 50%;
     padding: 0;
+    transition: fill var(--transition-dur-and-func);
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus{
+    fill: var(--accent-color);
 }
 
 .modal-caption{
@@ -779,20 +785,26 @@ line-height: 1.2;
 }
 
 .modal-form-input{
+    
     width: 100%;
     height: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     padding-left: 42px;
-    transition: border-color var(--transition-dur-and-func);
+    transition: border-color var(--transition-dur-and-func), fill var(--transition-dur-and-func);
 }
 
+.modal-form-input:hover,
 .modal-form-input:focus,
+.modal-form-check:hover,
 .modal-form-check:focus,
+.modal-form-messege:hover,
 .modal-form-messege:focus{
     outline: none;
     border-color: var(--accent-color);
+    cursor: pointer;
 }
+ 
 
 .modal-form-icon{
     position: absolute;
@@ -802,8 +814,10 @@ line-height: 1.2;
     transition: fill var(--transition-dur-and-func);
 }
 
+.modal-form-input:hover + .modal-form-icon,
 .modal-form-input:focus + .modal-form-icon{
     fill: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 .modal-form-messege{
